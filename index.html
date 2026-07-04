@@ -12,7 +12,12 @@
 </head>
 <body>
   <main class="mobile-shell">
-    <section class="hero section" data-reveal>
+    <section class="opening section" data-reveal>
+      <h1 class="visually-hidden">Вы получили приглашение</h1>
+      <a class="opening__arrow" href="#invitation" aria-label="Открыть приглашение"></a>
+    </section>
+
+    <section class="hero section" id="invitation" data-reveal>
       <div class="hero__content">
         <p class="eyebrow">ПРИГЛАШЕНИЕ НА СВАДЬБУ</p>
         <h1 class="hero__names">
@@ -40,28 +45,31 @@
       </article>
     </section>
 
-    <section class="section countdown" data-reveal>
-      <div class="countdown__overlay">
-        <p class="countdown__title">Осталось до свадьбы:</p>
-        <div class="countdown__grid" data-countdown>
-          <div class="countdown__item">
-            <strong data-countdown-days>0</strong>
-            <span>Дней</span>
-          </div>
-          <div class="countdown__item">
-            <strong data-countdown-hours>0</strong>
-            <span>Часов</span>
-          </div>
-          <div class="countdown__item">
-            <strong data-countdown-minutes>0</strong>
-            <span>Минут</span>
-          </div>
-          <div class="countdown__item">
-            <strong data-countdown-seconds>0</strong>
-            <span>Секунд</span>
+    <section class="section section-pad couple-section" data-reveal>
+      <figure class="couple-photo">
+        <img src="assets/newlyweds.jpg" alt="Сылдис и Алена">
+        <div class="couple-countdown" aria-label="Осталось до свадьбы">
+          <p class="couple-countdown__title">До свадьбы осталось</p>
+          <div class="couple-countdown__grid" data-countdown>
+            <div class="couple-countdown__item">
+              <strong data-countdown-days>0</strong>
+              <span>Дней</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-hours>0</strong>
+              <span>Часов</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-minutes>0</strong>
+              <span>Минут</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-seconds>0</strong>
+              <span>Секунд</span>
+            </div>
           </div>
         </div>
-      </div>
+      </figure>
     </section>
 
     <section class="section section-pad" data-reveal>

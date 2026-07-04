@@ -14,19 +14,19 @@ assert.match(
 assert.match(
   html,
   /<section\s+class="section\s+section-pad"[^>]+id="guest-form"[^>]*>/,
-  "Guest form section should expose id=\"guest-form\" for smooth scrolling",
+  'Guest form section should expose id="guest-form" for smooth scrolling',
 );
 
 console.log("hero CTA tests passed");
 
 assert.match(
   css,
-  /url\("assets\/hero-wedding-reference\.png"\)/,
-  "Hero should use the supplied wedding reference image as its background",
+  /url\("assets\/hero-invitation-cover\.png"\)/,
+  "Hero should use the latest invitation cover image as its background",
 );
 
 assert.ok(
-  fs.existsSync(path.join(__dirname, "..", "assets", "hero-wedding-reference.png")),
+  fs.existsSync(path.join(__dirname, "..", "assets", "hero-invitation-cover.png")),
   "Hero background image asset should exist in the project",
 );
 
