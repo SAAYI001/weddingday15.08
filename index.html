@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Свадебное приглашение</title>
+  <meta name="description" content="Свадебное приглашение Сылдыса и Алены">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="opening-music" src="assets/ishkin-oglu-churjejem-typ-aar.mp3" loop preload="auto"></audio>
+
+  <main class="mobile-shell mobile-shell--opening">
+    <section class="opening section" data-opening>
+      <div class="opening__copy">
+        <p class="opening__eyebrow">Свадебное приглашение</p>
+        <h1>Сылдыс & Алена</h1>
+        <p>Нажмите на письмо, чтобы открыть</p>
+      </div>
+
+      <button class="envelope" type="button" data-envelope aria-label="Открыть свадебное приглашение">
+        <div class="envelope__shadow" aria-hidden="true"></div>
+        <div class="envelope__letter" aria-hidden="true">
+          <span class="envelope__photo"></span>
+          <span class="envelope__monogram">Сылдыс & Алена</span>
+          <span class="envelope__line"></span>
+          <span class="envelope__line envelope__line--short"></span>
+        </div>
+        <div class="envelope__body" aria-hidden="true"></div>
+        <div class="envelope__pocket envelope__pocket--left" aria-hidden="true"></div>
+        <div class="envelope__pocket envelope__pocket--right" aria-hidden="true"></div>
+        <div class="envelope__flap" aria-hidden="true"></div>
+      </button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сылдис & Алена - свадебное приглашение</title>
+  <meta name="description" content="Мобильное свадебное приглашение Сылдиса и Алены">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="wedding-music" src="assets/ishkin-oglu-churjejem-typ-aar.mp3" loop preload="auto"></audio>
+  <button class="music-toggle" type="button" data-music-toggle aria-controls="wedding-music" aria-pressed="false" aria-label="Включить мелодию">
+    <span class="music-toggle__icon" aria-hidden="true"></span>
+  </button>
+
+  <main class="mobile-shell">
+    <section class="opening section" data-reveal>
+      <h1 class="visually-hidden">Вы получили приглашение</h1>
+      <a class="opening__arrow" href="#invitation" aria-label="Открыть приглашение"></a>
+    </section>
+
+    <section class="hero section" id="invitation" data-reveal>
+      <div class="hero__content">
+        <p class="eyebrow">ПРИГЛАШЕНИЕ НА СВАДЬБУ</p>
+        <h1 class="hero__names">
+          <span>СЫЛДЫС</span>
+          <em>&</em>
+          <span>АЛЕНА</span>
+        </h1>
+        <div class="hero__date" aria-label="Дата свадьбы 15 августа 2026">
+          <span>АВГУСТ</span>
+          <strong>15</strong>
+          <span>2026</span>
+        </div>
+        <a class="button hero__cta" href="#guest-form">ПОДТВЕРДИТЬ УЧАСТИЕ</a>
+      </div>
+      <a class="scroll-cue" href="#greeting" aria-label="Перейти ниже">↓</a>
+    </section>
+
+    <section class="section section-pad" id="greeting" data-reveal>
+      <article class="card greeting-card">
+        <p class="section-label">РОДНЫЕ И БЛИЗКИЕ!</p>
+        <p class="script-line">Спешим поделиться радостью - мы женимся!</p>
+        <p>Это радостное событие мы хотим отметить в кругу самых близких и родных людей.</p>
+        <p class="date-line">15 АВГУСТА 2026</p>
+        <p>Будем очень рады, если в этот день, вы сможете присутствовать на нашем празднике.</p>
+      </article>
+    </section>
+
+    <section class="section section-pad couple-section" data-reveal>
+      <figure class="couple-photo">
+        <img src="assets/newlyweds.jpg" alt="Сылдис и Алена">
+        <div class="couple-countdown" aria-label="Осталось до свадьбы">
+          <p class="couple-countdown__title">До свадьбы осталось</p>
+          <div class="couple-countdown__grid" data-countdown>
+            <div class="couple-countdown__item">
+              <strong data-countdown-days>0</strong>
+              <span>Дней</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-hours>0</strong>
+              <span>Часов</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-minutes>0</strong>
+              <span>Минут</span>
+            </div>
+            <div class="couple-countdown__item">
+              <strong data-countdown-seconds>0</strong>
+              <span>Секунд</span>
+            </div>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section section-pad day-program-section" data-reveal>
+      <article class="card day-program-card">
+        <p class="section-label">ВРЕМЯ</p>
+        <h2 class="script-heading">Программа дня</h2>
+        <div class="timeline">
+          <div class="timeline__item" data-timeline-item>
+            <div class="timeline__marker">
+              <span class="timeline__icon" aria-hidden="true">☼</span>
+            </div>
+            <div class="timeline__content">
+              <time>09:00</time>
+              <h3>Утро жениха и невесты</h3>
+              <p>Подготовка, спокойное начало самого важного дня.</p>
+            </div>
+          </div>
+          <div class="timeline__item" data-timeline-item>
+            <div class="timeline__marker">
+              <span class="timeline__icon" aria-hidden="true">∞</span>
+            </div>
+            <div class="timeline__content">
+              <time>12:00</time>
+              <h3>Бракосочетание</h3>
+              <p>Торжественный момент создания семьи.</p>
+            </div>
+          </div>
+          <div class="timeline__item" data-timeline-item>
+            <div class="timeline__marker">
+              <span class="timeline__icon" aria-hidden="true">✦</span>
+            </div>
+            <div class="timeline__content">
+              <time>14:00</time>
+              <h3>Прогулка и свадебная фотосессия</h3>
+              <p>Тёплые кадры и первые воспоминания.</p>
+            </div>
+          </div>
+          <div class="timeline__item" data-timeline-item>
+            <div class="timeline__marker">
+              <span class="timeline__icon" aria-hidden="true">♨</span>
+            </div>
+            <div class="timeline__content">
+              <time>16:00</time>
+              <h3>Свадебный банкет</h3>
+              <p>Музыка, еда, танцы и поздравления.</p>
+            </div>
+          </div>
+          <div class="timeline__item" data-timeline-item>
+            <div class="timeline__marker">
+              <span class="timeline__icon" aria-hidden="true">✧</span>
+            </div>
+            <div class="timeline__content">
+              <time>22:00</time>
+              <h3>Завершение торжества</h3>
+              <p>Финал красивого дня с благодарностью гостям.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-pad" data-reveal>
+      <article class="card location-card">
+        <p class="section-label">ЛОКАЦИЯ</p>
+        <h2 class="script-heading">Место проведения</h2>
+        <p>Выездная церемония и праздничный банкет будут проходить в банкетном зале "Рояль-Холл"</p>
+        <p class="location-card__address">г. Кызыл, ул. Каа-Хем, 106</p>
+        <div class="location-card__map" id="location-map" data-location-map>
+          <iframe
+            title="Яндекс Карта: Рояль-Холл, г. Кызыл, ул. Каа-Хем, 106"
+            src="https://yandex.ru/map-widget/v1/?ll=94.740760%2C51.701650&mode=search&text=%D0%A0%D0%BE%D1%8F%D0%BB%D1%8C-%D0%A5%D0%BE%D0%BB%D0%BB%2C%20%D0%B3.%20%D0%9A%D1%8B%D0%B7%D1%8B%D0%BB%2C%20%D1%83%D0%BB.%20%D0%9A%D0%B0%D0%B0-%D0%A5%D0%B5%D0%BC%2C%20106&pt=94.740760%2C51.701650%2Cpm2rdm&z=18"
+            loading="lazy"
+            allowfullscreen
+          ></iframe>
+          <a class="location-card__map-link" href="https://yandex.ru/maps/?ll=94.740760%2C51.701650&mode=search&text=%D0%A0%D0%BE%D1%8F%D0%BB%D1%8C-%D0%A5%D0%BE%D0%BB%D0%BB%2C%20%D0%B3.%20%D0%9A%D1%8B%D0%B7%D1%8B%D0%BB%2C%20%D1%83%D0%BB.%20%D0%9A%D0%B0%D0%B0-%D0%A5%D0%B5%D0%BC%2C%20106&pt=94.740760%2C51.701650%2Cpm2rdm&z=18" target="_blank" rel="noreferrer">
+            Открыть в Яндекс.Картах
+          </a>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-pad" data-reveal>
+      <article class="card dress-card">
+        <p class="section-label">DRESS</p>
+        <h2 class="script-heading">Code</h2>
+        <p>Для нас главное - Ваше присутствие!</p>
+        <p>Соблюдение дресс-кода не обязательно, но мы будем очень признательны, если Вы поддержите стилистику нашего мероприятия в своих вечерних образах.</p>
+        <p>Подберите их в соответствии с данной цветовой гаммой:</p>
+
+        <div class="palette" aria-label="Цветовая палитра">
+          <span style="--swatch: #d8c4ae" title="Бежевый"></span>
+          <span style="--swatch: #b9c4c8" title="Серо-голубой"></span>
+          <span style="--swatch: #b7b1aa" title="Серый"></span>
+          <span style="--swatch: #f7f0e7" title="Молочный"></span>
+          <span style="--swatch: #dbc0bd" title="Пудрово-розовый"></span>
+        </div>
+
+        <div class="moodboard" aria-label="Коллаж образов">
+          <figure class="moodboard__image-card" data-reveal>
+            <img src="assets/dress-moodboard-girls.png" alt="Девушки в пастельных платьях для дресс-кода">
+          </figure>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section-pad" id="guest-form" data-reveal>
+      <article class="card form-card">
+        <p class="section-label">АНКЕТА</p>
+        <h2 class="script-heading">Анкета гостя</h2>
+        <p>Будем очень признательны, если Вы подтвердите свое присутствие и заполните анкету до 30 июля.</p>
+
+        <form class="guest-form" data-guest-form>
+          <label class="field">
+            <span>Имя и фамилия</span>
+            <small>Если Вы будете со своей парой, укажите оба имени</small>
+            <input type="text" name="guestName" placeholder="Иван Иванов/Мария Иванова" required>
+          </label>
+
+          <fieldset>
+            <legend>Подтвердите своё присутствие:</legend>
+            <label><input type="radio" name="attendance" value="yes" required> Да, с удовольствием!</label>
+            <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+          </fieldset>
+
+          <button class="button button--submit" type="submit">ОТПРАВИТЬ</button>
+          <p class="success-message" data-success-message hidden>Спасибо! Ваш ответ сохранён.</p>
+        </form>
+      </article>
+    </section>
+
+    <section class="section final-section" data-reveal>
+      <p class="final-title">С НЕТЕРПЕНИЕМ</p>
+      <p class="final-script">ждём Вас!</p>
+      <p class="monogram">С & А</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
