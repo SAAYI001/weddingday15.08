@@ -8,9 +8,9 @@ const script = fs.readFileSync(path.join(__dirname, "..", "script.js"), "utf8");
 
 const requiredEvents = [
   ["09:00", "Утро жениха и невесты", "Подготовка, спокойное начало самого важного дня."],
-  ["12:00", "Бракосочетание", "Торжественный момент создания семьи."],
+  ["12:00", "Бракосочетание", "Торжественный момент."],
   ["14:00", "Прогулка и свадебная фотосессия", "Тёплые кадры и первые воспоминания."],
-  ["16:00", "Свадебный банкет", "Музыка, еда, танцы и поздравления."],
+  ["17:00", "Свадебный банкет", "Музыка, еда, танцы и поздравления."],
   ["22:00", "Завершение торжества", "Финал красивого дня с благодарностью гостям."],
 ];
 
@@ -25,6 +25,12 @@ for (const [time, title, description] of requiredEvents) {
   assert.match(html, new RegExp(title), `Day program should include ${title}`);
   assert.match(html, new RegExp(description), `Day program should include ${description}`);
 }
+
+assert.doesNotMatch(
+  html,
+  /Торжественный момент создания семьи\./,
+  "Marriage ceremony description should not include 'создания семьи'",
+);
 
 assert.equal(
   (html.match(/class="timeline__icon"/g) || []).length,

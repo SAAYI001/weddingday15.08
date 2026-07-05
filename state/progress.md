@@ -33,6 +33,7 @@
 - Day program section redesigned as a pastel vertical timeline with five wedding events, icon markers, decorative hearts, hover lift, and individual scroll reveal animation; covered by `tests/day-program.test.cjs`.
 - Guest form no longer asks for drink preferences; covered by `tests/guest-form.test.cjs`.
 - Dress code moodboard placeholder blocks (`Look`, `Detail`, `Suit`, `Palette`, `Dress`, `Texture`) replaced with `assets/dress-moodboard-girls.png` as a full-width rounded image card; covered by `tests/moodboard-image.test.cjs`.
+- Added `assets/newlyweds-second.jpg` as a polished photo card between the day program and location sections; covered by `tests/newlyweds-second-photo.test.cjs`.
 
 ## Next steps
 
