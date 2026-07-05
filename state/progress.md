@@ -34,6 +34,8 @@
 - Guest form no longer asks for drink preferences; covered by `tests/guest-form.test.cjs`.
 - Dress code moodboard placeholder blocks (`Look`, `Detail`, `Suit`, `Palette`, `Dress`, `Texture`) replaced with `assets/dress-moodboard-girls.png` as a full-width rounded image card; covered by `tests/moodboard-image.test.cjs`.
 - Added `assets/newlyweds-second.jpg` as a polished photo card between the day program and location sections; covered by `tests/newlyweds-second-photo.test.cjs`.
+- Opening flow is now single-page on `index.html`: the envelope reveals the hidden invite shell without redirecting to `invite.html`, and the same `wedding-music` audio element continues playing; covered by `tests/opening-screen.test.cjs` and `tests/music-toggle.test.cjs`.
+- Location description now starts with `Праздничный банкет...` without the `Выездная церемония и` phrase; covered by `tests/location-map.test.cjs`.
 
 ## Next steps
 

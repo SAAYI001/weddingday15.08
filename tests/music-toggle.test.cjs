@@ -9,8 +9,14 @@ const script = fs.readFileSync(path.join(__dirname, "..", "script.js"), "utf8");
 
 assert.match(
   openingHtml,
-  /<audio\s+id="opening-music"[^>]+src="assets\/ishkin-oglu-churjejem-typ-aar\.mp3"[^>]+loop[^>]*>/,
-  "Opening page should include the same looping music file so the envelope click can start playback",
+  /<audio\s+id="wedding-music"[^>]+src="assets\/ishkin-oglu-churjejem-typ-aar\.mp3"[^>]+loop[^>]*>/,
+  "Opening page should use the same music element as the invitation",
+);
+
+assert.doesNotMatch(
+  openingHtml,
+  /id="opening-music"/,
+  "Opening page should not create a second music element",
 );
 
 assert.match(

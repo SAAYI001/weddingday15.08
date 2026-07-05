@@ -168,6 +168,17 @@ a {
   box-shadow: 0 0 70px rgba(61, 47, 40, .14);
 }
 
+.mobile-shell--invite {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.mobile-shell--invite.is-opened {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .85s ease, transform .85s ease;
+}
+
 .section {
   position: relative;
 }

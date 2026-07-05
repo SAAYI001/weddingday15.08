@@ -3,6 +3,7 @@ const fs = require("node:fs");
 const path = require("node:path");
 
 const html = fs.readFileSync(path.join(__dirname, "..", "invite.html"), "utf8");
+const indexHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
 const css = fs.readFileSync(path.join(__dirname, "..", "style.css"), "utf8");
 const script = fs.readFileSync(path.join(__dirname, "..", "script.js"), "utf8");
 
@@ -17,6 +18,20 @@ assert.match(
   /<p class="location-card__address">[^<]*106<\/p>/,
   "Location card should show the venue address",
 );
+
+for (const page of [html, indexHtml]) {
+  assert.match(
+    page,
+    /<p>Праздничный банкет будут проходить в банкетном зале "Рояль-Холл"<\/p>/,
+    "Location copy should start with capitalized 'Праздничный банкет'",
+  );
+
+  assert.doesNotMatch(
+    page,
+    /Выездная церемония и/,
+    "Location copy should not mention the outgoing ceremony text",
+  );
+}
 
 assert.match(
   html,

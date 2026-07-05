@@ -61,7 +61,9 @@
   function initEnvelopeOpening() {
     const opening = document.querySelector("[data-opening]");
     const envelope = document.querySelector("[data-envelope]");
-    const openingMusic = document.querySelector("#opening-music");
+    const inviteShell = document.querySelector("[data-invite-shell]");
+    const openingShell = document.querySelector(".mobile-shell--opening");
+    const music = document.querySelector("#wedding-music");
     if (!opening || !envelope) return;
 
     let isOpening = false;
@@ -79,12 +81,24 @@
         // The invitation still opens when storage is unavailable.
       }
 
-      if (openingMusic) {
-        openingMusic.play().catch(() => {});
+      if (music) {
+        music.play().catch(() => {});
       }
 
       setTimeout(() => {
-        window.location.href = "invite.html";
+        if (inviteShell) {
+          inviteShell.hidden = false;
+          inviteShell.classList.add("is-opened");
+        }
+
+        if (openingShell) {
+          openingShell.hidden = true;
+        }
+
+        const invitation = document.querySelector("#invitation");
+        if (invitation) {
+          invitation.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       }, 1300);
     });
   }

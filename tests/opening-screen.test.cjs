@@ -49,22 +49,28 @@ assert.match(
   "Envelope click behavior should be initialized in script.js",
 );
 
-assert.match(
+assert.doesNotMatch(
   script,
   /window\.location\.href\s*=\s*"invite\.html"/,
-  "Envelope animation should redirect to invite.html",
+  "Envelope animation should not redirect to invite.html",
 );
 
 assert.match(
   script,
-  /setTimeout\([\s\S]*1[2-5]00/,
-  "Redirect should happen after roughly 1.2-1.5 seconds",
+  /document\.querySelector\("\[data-invite-shell\]"\)/,
+  "Envelope click should reveal the invite shell on the same page",
 );
 
 assert.match(
-  inviteHtml,
+  html,
+  /<main class="mobile-shell mobile-shell--invite" data-invite-shell hidden>/,
+  "Index page should include the hidden invitation content",
+);
+
+assert.match(
+  html,
   /<section\s+class="hero\s+section"\s+id="invitation"/,
-  'Invite page should contain the main invitation content',
+  "Index page should contain the main invitation content",
 );
 
 console.log("opening screen tests passed");
