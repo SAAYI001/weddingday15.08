@@ -13,6 +13,7 @@ const mimeTypes = {
   ".js": "text/javascript; charset=utf-8",
   ".mp3": "audio/mpeg",
   ".png": "image/png",
+  ".webp": "image/webp",
 };
 
 function loadEnv(filePath = path.join(rootDir, ".env")) {
@@ -149,6 +150,9 @@ function serveStatic(request, response) {
 
     response.writeHead(200, {
       "content-type": mimeTypes[path.extname(filePath)] || "application/octet-stream",
+      "cache-control": pathname.startsWith("/assets/")
+        ? "public, max-age=31536000, immutable"
+        : "public, max-age=300",
     });
     response.end(content);
   });
