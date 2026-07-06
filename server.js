@@ -133,12 +133,19 @@ function sanitizeErrorMessage(error, env) {
 function serveStatic(request, response) {
   const requestUrl = new URL(request.url, "http://localhost");
   const pathname = requestUrl.pathname === "/" ? "/index.html" : requestUrl.pathname;
-  const filePath = path.normalize(path.join(rootDir, decodeURIComponent(pathname)));
+  let filePath = path.normalize(path.join(rootDir, decodeURIComponent(pathname)));
 
   if (!filePath.startsWith(rootDir)) {
     response.writeHead(403);
     response.end("Forbidden");
     return;
+  }
+
+  if (pathname.startsWith("/assets/") && path.extname(filePath) === ".png") {
+    const optimizedFilePath = filePath.slice(0, -4) + ".jpg";
+    if (fs.existsSync(optimizedFilePath)) {
+      filePath = optimizedFilePath;
+    }
   }
 
   fs.readFile(filePath, (error, content) => {

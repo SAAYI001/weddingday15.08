@@ -8,7 +8,8 @@
   - `.webp` MIME type is supported for the next image optimization step.
 - Added early page optimization scripts in `index.html` and `invite.html` to disable audio preload and lazy-load secondary images.
 - Added `tools/optimize-assets.ps1` to convert the large PNG assets to optimized JPG files and rewrite references.
+- Updated `tools/optimize-assets.ps1` so it no longer rewrites HTML/CSS/JS and cannot corrupt Russian text encoding.
+- Updated `server.js` to serve optimized JPG files when old PNG asset URLs are requested and a matching JPG exists.
+- Updated `script.js` to disable audio preload and lazy-load secondary images without changing page text.
 - Remaining optimization work:
-  - run `tools/optimize-assets.ps1`;
-  - review generated JPG sizes;
   - commit/push and redeploy.

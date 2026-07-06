@@ -52,17 +52,6 @@ foreach ($name in $images) {
   }
 }
 
-$textFiles = @("index.html", "invite.html", "style.css", "script.js")
-
-foreach ($file in $textFiles) {
-  $path = Join-Path $root $file
-  if (-not (Test-Path -LiteralPath $path)) {
-    continue
-  }
-
-  $content = Get-Content -LiteralPath $path -Raw
-  foreach ($name in $images) {
-    $content = $content.Replace("assets/$name.png", "assets/$name.jpg")
-  }
-  Set-Content -LiteralPath $path -Value $content -NoNewline -Encoding UTF8
-}
+Write-Host ""
+Write-Host "Images optimized. This script intentionally does not rewrite HTML/CSS/JS,"
+Write-Host "so existing Russian text encoding stays untouched."

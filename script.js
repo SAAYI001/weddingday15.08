@@ -204,3 +204,15 @@
     }
   }
 })(typeof window !== "undefined" ? window : globalThis);
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("audio").forEach((audio) => {
+    audio.preload = "none";
+  });
+
+  document.querySelectorAll("img:not([loading])").forEach((image, index) => {
+    if (index > 0) {
+      image.loading = "lazy";
+    }
+    image.decoding = "async";
+  });
+});
