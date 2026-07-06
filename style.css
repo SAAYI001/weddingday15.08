@@ -1165,6 +1165,15 @@ input[type="checkbox"] {
   font-weight: 600;
 }
 
+.success-message--error {
+  color: #7d3b36 !important;
+}
+
+.button:disabled {
+  cursor: wait;
+  opacity: .68;
+}
+
 .final-section {
   min-height: 520px;
   display: grid;

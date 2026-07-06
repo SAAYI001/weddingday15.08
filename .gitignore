@@ -2,3 +2,6 @@
 .git/
 .gitdata/
 .deploy-keys/
+.env
+node
+npm

@@ -48,13 +48,45 @@
   function initGuestForm() {
     const form = document.querySelector("[data-guest-form]");
     const successMessage = document.querySelector("[data-success-message]");
-    if (!form || !successMessage) return;
+    const errorMessage = document.querySelector("[data-error-message]");
+    const submitButton = form ? form.querySelector("[type='submit']") : null;
+    if (!form || !successMessage || !errorMessage) return;
 
-    form.addEventListener("submit", (event) => {
+    form.addEventListener("submit", async (event) => {
       event.preventDefault();
-      successMessage.hidden = false;
-      form.reset();
-      successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      successMessage.hidden = true;
+      errorMessage.hidden = true;
+
+      if (submitButton) submitButton.disabled = true;
+
+      const formData = new FormData(form);
+      const payload = {
+        guestName: String(formData.get("guestName") || "").trim(),
+        attendance: String(formData.get("attendance") || "").trim(),
+      };
+
+      try {
+        const response = await fetch("/api/rsvp", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error("RSVP request failed");
+        }
+
+        successMessage.hidden = false;
+        form.reset();
+        successMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      } catch (error) {
+        errorMessage.hidden = false;
+        errorMessage.scrollIntoView({ behavior: "smooth", block: "center" });
+      } finally {
+        if (submitButton) submitButton.disabled = false;
+      }
     });
   }
 

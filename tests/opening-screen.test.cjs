@@ -9,6 +9,12 @@ const script = fs.readFileSync(path.join(__dirname, "..", "script.js"), "utf8");
 
 assert.match(
   html,
+  /Свадебное приглашение/,
+  "Opening screen should render readable Russian invitation text",
+);
+
+assert.match(
+  html,
   /<button\s+class="envelope"[^>]+data-envelope[^>]*>/,
   "Opening screen should expose a clickable envelope button",
 );

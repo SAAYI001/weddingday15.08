@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/countdown.test.cjs && node tests/couple-photo.test.cjs && node tests/day-program.test.cjs && node tests/guest-form.test.cjs && node tests/hero-cta.test.cjs && node tests/location-map.test.cjs && node tests/moodboard-image.test.cjs && node tests/music-toggle.test.cjs && node tests/newlyweds-second-photo.test.cjs && node tests/opening-screen.test.cjs && node tests/site-color.test.cjs && node tests/telegram-rsvp.test.cjs && node tests/deploy-readiness.test.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

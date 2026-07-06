@@ -1,0 +1,12 @@
+.env
+.git
+.gitdata
+.deploy-keys
+.superpowers
+docs
+state
+tests
+node_modules
+npm
+node
+_github_push_main

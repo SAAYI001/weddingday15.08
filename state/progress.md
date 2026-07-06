@@ -36,8 +36,21 @@
 - Added `assets/newlyweds-second.jpg` as a polished photo card between the day program and location sections; covered by `tests/newlyweds-second-photo.test.cjs`.
 - Opening flow is now single-page on `index.html`: the envelope reveals the hidden invite shell without redirecting to `invite.html`, and the same `wedding-music` audio element continues playing; covered by `tests/opening-screen.test.cjs` and `tests/music-toggle.test.cjs`.
 - Location description now starts with `Праздничный банкет...` without the `Выездная церемония и` phrase; covered by `tests/location-map.test.cjs`.
+- Resumed on 2026-07-06: verified that the apparent Russian-text mojibake is limited to PowerShell output; `index.html` contains valid UTF-8 Russian text. Added a readable-text guard to `tests/opening-screen.test.cjs`.
+- All 11 Node-based tests pass locally.
+- Added root `.env` with empty `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` placeholders for manual Telegram setup.
+- Added local Node server integration for Telegram RSVP submissions. The guest form now posts to `POST /api/rsvp`, `server.js` reads Telegram credentials from `.env`, sends formatted messages to Telegram, serves the static invitation, and keeps `.env` ignored by Git.
+- Added `package.json` with `npm start` and `npm test`; `tests/telegram-rsvp.test.cjs` covers `.env` protection, frontend submission wiring, message formatting, successful sends, and missing Telegram configuration.
+- Verification on 2026-07-06: `npm test` passes across all invitation tests plus the new Telegram RSVP coverage.
+- Local server verification on 2026-07-06: `server.js` responds at `http://127.0.0.1:3000/` with the invitation page.
+- Telegram send diagnosis on 2026-07-06: `.env` values are present and `/api/rsvp` is reached, but the local Codex-run environment blocks outbound Telegram HTTPS with `connect EACCES ...:443`. Test the real send from a normal terminal or VPS environment with outbound HTTPS enabled.
+- Freed local port 3000 on 2026-07-06 by stopping the prior background `node server.js` process that was started from the restricted Codex environment.
+- Added sanitized Telegram error logging on 2026-07-06: when `/api/rsvp` fails to send, `server.js` now prints the real Telegram/network error in the terminal while masking token and chat ID. `npm test` passes.
+- User-run local Telegram diagnosis on 2026-07-06: normal `npm start` reaches `/api/rsvp`, but Telegram send fails with `connect ETIMEDOUT 149.154.166.110:443`, confirming an outbound network timeout to Telegram rather than a form or server-code issue.
+- Prepared project for Dokploy deployment on 2026-07-06: added `Dockerfile`, `.dockerignore`, `.env.example`, `README.md` deploy notes, `/health` endpoint, and `tests/deploy-readiness.test.cjs`. `npm test` passes including deploy readiness coverage.
 
 ## Next steps
 
 - Replace placeholder names, venue, address, map link, and photos when real data is ready.
 - Review the mobile page visually and request polish changes if needed.
+- For Dokploy deployment, connect the GitHub repository, choose Dockerfile build, set app port `3000`, set health path `/health`, add `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` environment variables, and attach the Beget domain with HTTPS.
