@@ -155,7 +155,7 @@ function serveStatic(request, response) {
 }
 
 function createServer({
-  env = loadEnv(),
+  env = { ...loadEnv(), ...process.env },
   logger = console,
   sendTelegramMessage: sendMessage = sendTelegramMessage,
 } = {}) {
